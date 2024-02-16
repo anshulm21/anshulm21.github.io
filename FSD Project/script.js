@@ -102,6 +102,7 @@ nextBtn.addEventListener(
             quizDisplay(questionCount);
             count = 11;
             clearInterval(countdown);
+            document.querySelector('.timer-div').classList.remove('low-time');
             timerDisplay();
         }
     })
@@ -111,7 +112,11 @@ const timerDisplay = () => {
     countdown = setInterval(() => {
         count--;
         timeLeft.innerHTML = `${count}s`;
+        if (count <= 3) {
+            document.querySelector('.timer-div').classList.add('low-time');
+        }
         if (count == 0) {
+            document.querySelector('.timer-div').classList.remove('low-time');
             clearInterval(countdown);
             displayNext();
         }

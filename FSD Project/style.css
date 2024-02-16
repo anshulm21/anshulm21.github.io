@@ -62,6 +62,10 @@ button {
   border-bottom: 0.1em solid #c0bfd2;
 }
 
+.timer-div.low-time {
+  background-color: red;
+}
+
 .timer-div {
   /* background-color: #e1f5fe; */
   background-color: #2688dd;
