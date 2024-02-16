@@ -93,6 +93,7 @@ button {
   background: transparent;
   border: 1px solid #c0bfd2;
   border-radius: 0.3em;
+  background-color: white;
 }
 
 .option-div:disabled {
@@ -122,8 +123,8 @@ button {
 }
 
 .correct {
-  background-color: #e7f6d5;
-  color: #689f38;
+  background-color: #C6FFAB;
+  color: #458109;
   border-color: #689f38;
 }
 
