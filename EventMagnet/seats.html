@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .seat,
+        .seat-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 0.5px green;
+            background-color: white;
+            color: green;
+            height: 0.5cm;
+            width: 0.5cm;
+            font-size: 15px;
+            margin: 3px;
+            border-radius: 2px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Ensure vertical alignment within the row */
+            margin-bottom: 7px;
+            /* Spacing between rows */
+        }
+
+        .labels {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Ensure vertical alignment within the row */
+            margin-bottom: 7px;
+            /* Spacing between rows */
+        }
+
+        .labels>p {
+            margin-left: 10px;
+            margin-right: 20px;
+            font-family: sans-serif;
+        }
+
+
+        .row-label {
+            margin-right: 30px;
+            /* Space between label and seats */
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            /* Center the text vertically with seats */
+            color: grey
+        }
+
+        .gap {
+            width: 25px;
+            flex-shrink: 0;
+        }
+
+        .selected,
+        .seat:hover {
+            background-color: #1ea83c;
+            color: white;
+            cursor: pointer;
+        }
+
+        .row-gap {
+            height: 20px
+        }
+
+        #I>.row-label,
+        #J>.row-label {
+            margin-right: 35px;
+            margin-left: 3px;
+        }
+
+        .seat-label#available {
+            border: solid 0.5px green;
+        }
+
+        .seat-label#selected {
+            border: solid 0.5px green;
+            background-color: green;
+        }
+
+        .seat-label#sold {
+            background-color: #f0ecec;
+            border: none
+        }
+
+        .seat#blocked {
+            background-color: #f0ecec;
+            color: white;
+            border: 0.5px #f0ecec;
+        }
+
+        .seat#blocked:hover {
+            cursor: default;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .image-container p{
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+        .gap-height{
+            height:100px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Row 1 -->
+        <div class="row" id="A">
+            <div class="row-label">A</div>
+            <div class="seat" ></div>
+            <div class="seat"></div>
+            <div class="seat" ></div>
+            <div class="seat" ></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <!-- Row 2 -->
+        <div class="row" id="B">
+            <div class="row-label">B</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat" id = "blocked"></div>
+        </div>
+        <!-- Row 3 -->
+        <div class="row" id="C">
+            <div class="row-label">C</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <!-- Row 4 -->
+        <div class="row" id="D">
+            <div class="row-label">D</div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat" id = "blocked"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <!-- Row 5 -->
+        <div class="row" id="E">
+            <div class="row-label">E</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <!-- Row 6 -->
+        <div class="row" id="F">
+            <div class="row-label">F</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <!-- Row 7 -->
+        <div class="row" id="G">
+            <div class="row-label">G</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <!-- Row 8 -->
+        <div class="row" id="H">
+            <div class="row-label">H</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row-gap"></div>
+        <!-- Row 9 -->
+        <div class="row" id="I">
+            <div class="row-label">I</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <!-- Row 10 -->
+        <div class="row" id="J">
+            <div class="row-label">J</div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="gap"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+    </div>
+    <div class="gap-height"></div>
+    <div class="image-container">
+        <img src="all-eyes-this-way.png">
+        <p>
+            All eyes this way please!
+        </p>
+    </div>
+    <div class="labels">
+        <div class="seat-label" id="available"></div>
+        <p>Available</p>
+        <div class="seat-label" id="selected"></div>
+        <p>Selected</p>
+        <div class="seat-label" id="sold"></div>
+        <p>Sold</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const rows = document.querySelectorAll('.row');
+            rows.forEach((row, rowIndex) => {
+                let seatNumber = 1;
+                row.childNodes.forEach(child => {
+                    if (child.classList && child.classList.contains('seat')) {
+                        child.textContent = seatNumber <= 14 ? seatNumber++ : ''; // Number seats up to 10
+
+                        // Add click event listener to toggle the selected state
+                        child.addEventListener('click', function () {
+                            child.classList.toggle('selected');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
