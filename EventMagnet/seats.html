@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         .seat,
         .seat-label {
             display: flex;
@@ -114,12 +118,14 @@
             align-items: center;
             flex-direction: column;
         }
-        .image-container p{
+
+        .image-container p {
             margin-top: 10px;
             font-family: sans-serif;
         }
-        .gap-height{
-            height:100px
+
+        .gap-height {
+            height: 100px
         }
     </style>
 </head>
@@ -129,19 +135,19 @@
         <!-- Row 1 -->
         <div class="row" id="A">
             <div class="row-label">A</div>
-            <div class="seat" ></div>
             <div class="seat"></div>
-            <div class="seat" ></div>
-            <div class="seat" ></div>
-            <div class="seat" id = "blocked"></div>
-            <div class="seat" id = "blocked"></div>
-            <div class="seat" id = "blocked"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat" id="blocked"></div>
+            <div class="seat" id="blocked"></div>
+            <div class="seat" id="blocked"></div>
             <div class="gap"></div>
             <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
-            <div class="seat"></div>
+            <div class="seat"></div>  
             <div class="seat"></div>
             <div class="seat"></div>
         </div>
@@ -161,8 +167,8 @@
             <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
-            <div class="seat" id = "blocked"></div>
-            <div class="seat" id = "blocked"></div>
+            <div class="seat" id="blocked"></div>
+            <div class="seat" id="blocked"></div>
         </div>
         <!-- Row 3 -->
         <div class="row" id="C">
@@ -170,10 +176,10 @@
             <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
-            <div class="seat" id = "blocked"></div>
-            <div class="seat" id = "blocked"></div>
-            <div class="seat" id = "blocked"></div>
-            <div class="seat" id = "blocked"></div>
+            <div class="seat" id="blocked"></div>
+            <div class="seat" id="blocked"></div>
+            <div class="seat" id="blocked"></div>
+            <div class="seat" id="blocked"></div>
             <div class="gap"></div>
             <div class="seat"></div>
             <div class="seat"></div>
@@ -186,8 +192,8 @@
         <!-- Row 4 -->
         <div class="row" id="D">
             <div class="row-label">D</div>
-            <div class="seat" id = "blocked"></div>
-            <div class="seat" id = "blocked"></div>
+            <div class="seat" id="blocked"></div>
+            <div class="seat" id="blocked"></div>
             <div class="seat"></div>
             <div class="seat"></div>
             <div class="seat"></div>
